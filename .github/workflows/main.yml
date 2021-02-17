@@ -7,8 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,12 +35,12 @@ jobs:
     # Yarn command
           cmd: install
       - name: Install Yarn    
-        run: yarn
+        run: pip install npm
         
       - name: Build React App
         run: yarn build
       - name: Install surge
-        run: npm install --global surge
+        run: npm install --g surge
         
       - name: Deploy This surge
         run: surge ./build Bootcampmyreact.surge.sh --token ${{secrets.KEY_SURGE}}
