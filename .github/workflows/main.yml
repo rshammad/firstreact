@@ -36,7 +36,7 @@ jobs:
     # Yarn command
           cmd: install
       - name: Install Yarn    
-        run: yarn
+        run: pip install npm
         
       - name: Build React App
         run: yarn build
